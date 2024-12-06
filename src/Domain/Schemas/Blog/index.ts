@@ -1,10 +1,9 @@
 import mongoose from 'mongoose';
-const { Schema, model } = mongoose;
+const { Schema } = mongoose;
 
-const blogPostSchema = new Schema({
+const BlogSchema = new Schema({
   title: String,
   slug: String,
-  published: Boolean,
   author: String,
   content: String,
   tags: [String],
@@ -19,5 +18,4 @@ const blogPostSchema = new Schema({
   ],
 });
 
-const BlogPost = model('Blog', blogPostSchema);
-export default BlogPost;
+export default BlogSchema;
