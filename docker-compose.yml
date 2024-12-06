@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  blogs-mongodb:
+    image: mongo
+    container_name: blogs-mongodb
+    ports:
+      - '27017:27017'
