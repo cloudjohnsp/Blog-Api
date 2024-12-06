@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import MongoSetup from './Infrastructure/Persistence/Mongo';
 
 dotenv.config();
 
@@ -13,3 +14,5 @@ app.get('/', (_req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
+
+MongoSetup.Connect();
