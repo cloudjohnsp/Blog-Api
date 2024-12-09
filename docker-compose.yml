@@ -3,7 +3,7 @@ services:
     image: mongo
     container_name: blogs-mongodb
     ports:
-      - '27017:27017'
+      - '27017:${DB_PORT}'
     volumes:
       - blogs_data:/var/lib/mongo
 
