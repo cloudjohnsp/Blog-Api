@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
+import IBlog from '../../../Application/Interfaces/Blog';
 const { Schema } = mongoose;
 
-const BlogSchema = new Schema({
+const BlogSchema = new Schema<IBlog>({
   title: String,
   slug: String,
   author: String,

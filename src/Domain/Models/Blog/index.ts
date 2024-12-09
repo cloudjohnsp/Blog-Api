@@ -1,6 +1,7 @@
 import { model } from 'mongoose';
 import BlogPostSchema from '../../Schemas/Blog';
+import IBlog from '../../../Application/Interfaces/Blog';
 
-const Blog = model('Blog', BlogPostSchema);
+const Blog = model<IBlog>('Blog', BlogPostSchema);
 
 export default Blog;

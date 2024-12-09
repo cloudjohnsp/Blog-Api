@@ -1,14 +1,17 @@
-interface IBlog {
+import { Document, Types } from 'mongoose';
+
+interface IBlog extends Document {
+  _id: Types.ObjectId;
   title: string;
   slug: string;
-  author?: string;
+  author: string;
   content: string;
-  tags?: string[];
-  createdAt?: Date;
-  updatedAt?: Date;
+  tags: string[];
+  createdAt: Date;
+  updatedAt: Date;
   upVotes: number;
   downVotes: number;
-  comments?: [
+  comments: [
     {
       user: string;
       content: string;
