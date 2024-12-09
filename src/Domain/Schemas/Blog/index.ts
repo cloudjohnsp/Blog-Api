@@ -3,10 +3,10 @@ import IBlog from '../../../Application/Interfaces/Blog';
 const { Schema } = mongoose;
 
 const BlogSchema = new Schema<IBlog>({
-  title: String,
+  title: { type: String, required: true },
   slug: String,
   author: String,
-  content: String,
+  content: { type: String, required: true },
   tags: [String],
   createdAt: Date,
   updatedAt: Date,

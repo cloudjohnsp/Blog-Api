@@ -6,13 +6,18 @@ class CreatePostUseCase {
   static async execute(
     request: CreateBlogPostDto
   ): Promise<CreateBlogPostResponseDto> {
-    const newBlogPost = await Blog.create(request);
+    const newBlogPost = await Blog.create({
+      ...request,
+      createdAt: new Date(),
+      slug: request.title,
+    });
     const response: CreateBlogPostResponseDto = {
       id: newBlogPost._id,
       title: newBlogPost.title,
-      slug: newBlogPost.slug,
+      slug: newBlogPost.title,
       content: newBlogPost.content,
       tags: newBlogPost.tags,
+      createdAt: newBlogPost.createdAt,
     };
 
     return response;
