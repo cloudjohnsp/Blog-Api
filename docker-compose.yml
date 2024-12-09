@@ -4,3 +4,8 @@ services:
     container_name: blogs-mongodb
     ports:
       - '27017:27017'
+    volumes:
+      - blogs_data:/var/lib/mongo
+
+volumes:
+  blogs_data:
