@@ -8,7 +8,11 @@ const BlogSchema = new Schema<IBlog>({
   author: String,
   content: { type: String, required: true },
   tags: [String],
-  createdAt: Date,
+  createdAt: {
+    type: Date,
+    default: () => Date.now(),
+    immutable: true,
+  },
   updatedAt: Date,
   comments: [
     {
