@@ -14,6 +14,7 @@ class FindByTitleUseCase {
         content: item.content,
         tags: item.tags,
         createdAt: item.createdAt,
+        updatedAt: item.updatedAt,
       };
     });
 
