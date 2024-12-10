@@ -17,6 +17,9 @@ class FindByPropertyUseCase {
         tags: item.tags,
         createdAt: item.createdAt,
         updatedAt: item.updatedAt,
+        upVotes: item.upVotes,
+        downVotes: item.downVotes,
+        comments: item.comments,
       };
     });
 

@@ -9,6 +9,9 @@ class CreatePostUseCase {
     const newBlogPost = await Blog.create({
       ...request,
       slug: request.title,
+      upVotes: 0,
+      downVotes: 0,
+      comments: [],
     });
     const response: CreateBlogPostResponseDto = {
       id: newBlogPost._id,
