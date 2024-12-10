@@ -1,12 +1,5 @@
-import { Types } from 'mongoose';
+import BlogPostResponse from './BlogPostResponse.dto';
 
-interface CreateBlogPostResponseDto {
-  id: Types.ObjectId;
-  title: string;
-  slug: string;
-  content: string;
-  tags: string[];
-  createdAt: Date;
-}
+interface CreateBlogPostResponseDto extends BlogPostResponse {}
 
 export default CreateBlogPostResponseDto;

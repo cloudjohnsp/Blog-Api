@@ -8,7 +8,6 @@ class CreatePostUseCase {
   ): Promise<CreateBlogPostResponseDto> {
     const newBlogPost = await Blog.create({
       ...request,
-      createdAt: new Date(),
       slug: request.title,
     });
     const response: CreateBlogPostResponseDto = {
