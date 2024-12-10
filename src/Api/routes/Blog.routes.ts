@@ -13,9 +13,9 @@ blogRouter
     blogController.createBlogPost
   )
   .get(
-    '/find-by-title/:title',
-    BlogValidator.findByTitleValidation,
-    blogController.findByTitle
+    '/find-by-property/:property&:value',
+    BlogValidator.findByPropertyValidation,
+    blogController.findByProperty
   );
 
 export default blogRouter;

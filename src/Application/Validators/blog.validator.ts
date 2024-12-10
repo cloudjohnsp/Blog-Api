@@ -10,9 +10,10 @@ class BlogValidator {
     }),
   });
 
-  private static readonly FIND_BY_TITLE_VALIDATOR = celebrate({
+  private static readonly FIND_BY_PROPERTY_VALIDATOR = celebrate({
     [Segments.PARAMS]: Joi.object({
-      title: Joi.string().min(1).max(100).required(),
+      property: Joi.string().min(1).max(100).required(),
+      value: Joi.string().min(1).max(100).required(),
     }),
   });
 
@@ -20,8 +21,8 @@ class BlogValidator {
     return BlogValidator.CREATE_VALIDATOR;
   }
 
-  static get findByTitleValidation() {
-    return BlogValidator.FIND_BY_TITLE_VALIDATOR;
+  static get findByPropertyValidation() {
+    return BlogValidator.FIND_BY_PROPERTY_VALIDATOR;
   }
 }
 

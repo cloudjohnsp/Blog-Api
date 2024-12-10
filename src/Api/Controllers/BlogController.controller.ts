@@ -19,14 +19,14 @@ class BlogController {
     }
   }
 
-  async findByTitle(
+  async findByProperty(
     req: Request,
     res: Response,
     next: NextFunction
   ): Promise<void> {
     try {
-      const { title } = req.params;
-      const data = await FindByTitleUseCase.execute(title);
+      const { property, value } = req.params;
+      const data = await FindByTitleUseCase.execute({ property, value });
 
       res.status(200).json(data);
     } catch (err) {

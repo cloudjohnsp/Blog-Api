@@ -1,10 +1,12 @@
 import Blog from '../../../Domain/Models/Blog';
 import BlogPostResponse from '../../Contracts/Dtos/Blog/BlogPostResponse.dto';
+import FindPostRequest from '../../Contracts/Dtos/Blog/FindPostRequest.dto';
 
-class FindByTitleUseCase {
-  static async execute(title: string): Promise<BlogPostResponse[]> {
-    const regex = new RegExp(`${title}`, 'i');
-    const posts = await Blog.find({ title: regex }).lean();
+class FindByPropertyUseCase {
+  static async execute(request: FindPostRequest): Promise<BlogPostResponse[]> {
+    const { property, value } = request;
+    const regex = new RegExp(`${value}`, 'i');
+    const posts = await Blog.find({ [property]: regex }).lean();
 
     const response = posts.map((item) => {
       return {
@@ -22,4 +24,4 @@ class FindByTitleUseCase {
   }
 }
 
-export default FindByTitleUseCase;
+export default FindByPropertyUseCase;
