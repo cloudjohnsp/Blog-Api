@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Blog from '../../src/Domain/Models/Blog';
 
-describe('BlogPost Model', () => {
+describe('Create BlogPost', () => {
   it('should create and save a blog post successfully', async () => {
     const blogPost = new Blog({
       title: 'Testing Mongoose with Jest',
