@@ -3,6 +3,7 @@ import CreatePostUseCase from '../../Application/UseCases/Blog/CreatePostUseCase
 import FindByTitleUseCase from '../../Application/UseCases/Blog/FindByTitleUseCase';
 import UpdateTitleUseCase from '../../Application/UseCases/Blog/UpdateTitleUseCase';
 import UpdateTagsUseCase from '../../Application/UseCases/Blog/UpdateTagsUseCase';
+import DeleteBlogPostUseCase from '../../Application/UseCases/Blog/DeleteBlogPostUseCase';
 
 class BlogController {
   async createBlogPost(
@@ -57,6 +58,16 @@ class BlogController {
     try {
       const response = await UpdateTagsUseCase.execute(req.body);
       res.status(200).json(response);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async delete(req: Request, res: Response, next: NextFunction): Promise<void> {
+    try {
+      const { id } = req.params;
+      await DeleteBlogPostUseCase.execute(id);
+      res.status(204).end();
     } catch (err) {
       next(err);
     }

@@ -32,6 +32,12 @@ class BlogValidator {
     }),
   });
 
+  private static readonly DELETE_POST_VALIDATOR = celebrate({
+    [Segments.PARAMS]: Joi.object({
+      id: Joi.string().min(1).required(),
+    }),
+  });
+
   static get createValidation() {
     return BlogValidator.CREATE_VALIDATOR;
   }
@@ -46,6 +52,10 @@ class BlogValidator {
 
   static get updateTags() {
     return BlogValidator.UPDATE_TAGS_VALIDATOR;
+  }
+
+  static get deletePost() {
+    return BlogValidator.DELETE_POST_VALIDATOR;
   }
 }
 

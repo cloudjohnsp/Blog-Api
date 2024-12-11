@@ -17,8 +17,8 @@ blogRouter
     BlogValidator.findByPropertyValidation,
     blogController.findByProperty
   )
-  .put('/update-title', BlogValidator.updateTitle, blogController.updateTitle)
-  .put('/update-tags', BlogValidator.updateTags, blogController.updateTags)
-  .delete('/delete');
+  .patch('/update-title', BlogValidator.updateTitle, blogController.updateTitle)
+  .patch('/update-tags', BlogValidator.updateTags, blogController.updateTags)
+  .delete('/delete/:id', BlogValidator.deletePost, blogController.delete);
 
 export default blogRouter;
