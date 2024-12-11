@@ -1,22 +1,5 @@
-import { Types } from 'mongoose';
+import BlogPost from './BlogPost.dto';
 
-interface BlogPostResponse {
-  id?: Types.ObjectId;
-  title?: string;
-  slug?: string;
-  content?: string;
-  tags?: string[];
-  createdAt?: Date;
-  updatedAt?: Date;
-  upVotes?: number;
-  downVotes?: number;
-  comments?: [
-    {
-      user: string;
-      content: string;
-      votes: number;
-    }
-  ];
-}
+type BlogPostResponse = Partial<BlogPost>;
 
 export default BlogPostResponse;

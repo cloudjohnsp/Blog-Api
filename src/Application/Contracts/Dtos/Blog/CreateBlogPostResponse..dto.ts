@@ -1,5 +1,6 @@
+import BlogPost from './BlogPost.dto';
 import BlogPostResponse from './BlogPostResponse.dto';
 
-interface CreateBlogPostResponseDto extends BlogPostResponse {}
+type CreateBlogPostResponseDto = BlogPostResponse;
 
 export default CreateBlogPostResponseDto;

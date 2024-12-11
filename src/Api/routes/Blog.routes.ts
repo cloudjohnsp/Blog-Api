@@ -16,6 +16,7 @@ blogRouter
     '/find-by-property/:property&:value',
     BlogValidator.findByPropertyValidation,
     blogController.findByProperty
-  );
+  )
+  .put('/update-title', blogController.updateTitle);
 
 export default blogRouter;
