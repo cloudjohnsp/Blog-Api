@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Blog from '../../src/Domain/Models/Blog';
+import Blog from '../../../src/Domain/Models/Blog';
 
 describe('Create BlogPost', () => {
   it('should create and save a blog post successfully', async () => {

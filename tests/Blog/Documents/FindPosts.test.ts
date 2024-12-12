@@ -1,5 +1,5 @@
-import Blog from '../../src/Domain/Models/Blog';
-import { createPost } from '../Utils/mongo-memory-server';
+import Blog from '../../../src/Domain/Models/Blog';
+import { createPost } from '../../Utils/mongo-memory-server';
 
 describe('FindBlogPost', () => {
   beforeAll(async () => {
