@@ -1,19 +1,18 @@
 import Blog from '../../../Domain/Models/Blog';
+import BlogPostResponse from '../../Contracts/Dtos/Blog/BlogPostResponse.dto';
 import CreateBlogPostRequestDto from '../../Contracts/Dtos/Blog/CreateBlogPostRequest.dto';
-import CreateBlogPostResponseDto from '../../Contracts/Dtos/Blog/CreateBlogPostResponse..dto';
 
 class CreatePostUseCase {
   static async execute(
     request: CreateBlogPostRequestDto
-  ): Promise<CreateBlogPostResponseDto> {
+  ): Promise<BlogPostResponse> {
     const newBlogPost = await Blog.create({
       ...request,
       slug: request.title,
       upVotes: 0,
       downVotes: 0,
-      comments: [],
     });
-    const response: CreateBlogPostResponseDto = {
+    const response: BlogPostResponse = {
       id: newBlogPost._id,
       title: newBlogPost.title,
       slug: newBlogPost.title,
